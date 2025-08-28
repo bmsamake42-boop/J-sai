@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url(file_00000000e5ec622fae99557188bd70bb.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-position: center;
+        }
+        .n1{
+            font-size: 50px;
+        }
+        .int{
+            text-align: center;
+            font-size: 40px;
+        }
+        .int span{
+            background-color: white;
+            color:  rgb(49, 23, 1);
+            padding: 12px;
+            border-radius: 12px;
+            font-style: italic;
+            text-shadow: 20px 20px 28px black;
+            border: 4px solid  rgb(49, 23, 1);
+        }
+        @media(max-width : 950px){
+            .int{
+                font-size: 27px;
+                margin-top: 100px;
+            }
+        }
+        #mon_form input{
+            font-size: 20px;
+            margin-top: 50px;
+            border-radius: 20px;
+            border: 4px solid   rgb(49, 23, 1);
+        }
+        #ok{
+            font-size: 25px;
+            margin-top: 20px;
+            border-radius: 15px;
+            color: white;
+            background-color: rgb(10, 144, 234);
+            cursor: pointer;
+            font-family: cursive;
+            font-weight: bold;
+        }
+        #para{
+            font-size: 50px;
+            font-family: cursive;
+            font-weight: bold;
+        }
+        #suivant{
+            font-size: 20px;
+            border-radius: 12px;
+            font-family: cursive;
+            background-color:  rgb(10, 144, 234);
+        }
+        #suivant a{
+            color: white;
+            text-decoration: none;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <span class="n1">3️⃣</span>
+    <div class="int">
+        <form action="" id="mon_form">
+            <span>Petit et rond, je fais tic-tac</span><br>
+            <input type="text" name="" id="mon_input" autocomplete="off" placeholder="Entrez la réponse ici"><br>
+            <button type="submit" id="ok">OK</button>
+            <p id="para"></p>
+            <div class="btn"><button id="suivant" style="display: none;"><a href="jeu4.html">niveau suivant</a></button></div>
+       </form>
+    </div>
+    
+    <script>
+            const mon_form = document.querySelector("#mon_form");
+            const mon_input = document.querySelector("#mon_input");
+            const para = document.querySelector("#para");
+            const suivant = document.querySelector("#suivant");
+            mon_form.addEventListener("submit", envoi);
+            function envoi(event){
+               event.preventDefault();
+               let valid = true;
+               if(mon_input.value === ""){
+                para.textContent = "";
+               }
+               else if(mon_input.value ==="montre" ||  mon_input.value ==="MONTRE" || mon_input.value ==="Montre"){
+                para.textContent = "trouvé🥳🎉";
+                suivant.style.display = "block";
+               }else{
+                para.textContent = "dommage😞"
+                mon_input.value = "";
+               }
+            }
+            document.addEventListener("contextmenu",(e)=>e.preventDefault());
+            document.addEventListener("keydown", function(e){
+                if(e.ctrlKey && e.key.toLowerCase()==='u'){
+                    e.preventDefault();
+                }
+                if(e.key === "F12"){
+                    e.preventDefault();
+                }
+                if(e.ctrlKey && e.shiftKey && e.key.toLocaleLowerCase() === 'i'){
+                    e.preventDefault();
+                }
+            });
+        </script>
+</body>
+</html>

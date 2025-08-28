@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url(file_00000000f0e461f88d1312b8b820785b.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-position: center;
+        }
+        .parent{
+            flex-direction: column;
+        }
+        .enfant1{
+            text-align: center;
+        }
+        .enfant1 img{
+            width: 400px;
+            height: 120px;
+            margin-top: 200px;
+            border-radius: 30px;
+            border: 4px solid rgb(49, 23, 1);
+        }
+        .enfant2{
+            text-align: center;
+        }
+        .enfant2 button{
+            font-size: 40px;
+            margin-top: 50px;
+            font-family: cursive;
+            border-radius: 20px;
+            border: 4px solid rgb(49, 23, 1);
+            color:  rgb(49, 23, 1) ;
+            background-color:  transparent;
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button a{
+            color:  rgb(49, 23, 1) ;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+        .enfant2  :hover{
+            background-color:  rgb(49, 23, 1) ;
+            color: white;
+        }
+        @media(max-width: 950px){
+            .enfant1 img{
+                margin-top: 350px;
+                width: 300px;
+            }
+            .enfant2 button{
+                margin-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="enfant1"><img src="file_00000000ad3861f99340260a59d2170a.png" alt=""></div>
+        <div class="enfant2"><button><a href="jeu.html">Commencer➡️</a></button></div>
+    </div>
+</body>
+</html>
